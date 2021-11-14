@@ -1,0 +1,71 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-primary {
+  background-color: #f2a340;
+  border: 2px solid #c28008;  
+}
+
+.btn-primary:hover {
+  background-color: #c28008;
+  border: #c28008;
+}
+
+#navbar{
+  justify-content: space-between;
+}
+
+#navbar a{
+  font-size: 14px;
+}
+
+  main > .container {
+    padding: 60px 15px 0;
+  }
+
+  main > .container-fluid {
+    padding: 60px 15px 0;
+  }
+
+  #search-container {
+    background-image: url('https://cdn.phenompeople.com/CareerConnectResources/ACCOGLOBAL/pt_br/desktop/assets/images/events/v-1606629575511-events_default_banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 100px;
+    text-align: center;
+    border: none;
+  }
+
+#search-container h1 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 900;
+}
+
+#events-container {
+  padding: 50px;
+}
+
+#events-container h2 {
+  margin-bottom: 10px;
+}
+
+#card-container {
+  display: flex;
+}
+
+#card-container .card {
+  flex: 1 1 0;
+  max-width: 25%;
+  border-radius: 8px;
+  padding: 0;
+  margin: 5px;
+}
+
+#card-container img  {
+  max-height: 150px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
