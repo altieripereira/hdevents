@@ -1,5 +1,5 @@
-html {
-    font-family: 'Roboto', sans-serif;
+* {
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .btn-primary {
@@ -9,7 +9,7 @@ html {
 
 .btn-primary:hover {
   background-color: #c28008;
-  border: #c28008;
+  border: 2px solid #c28008;
 }
 
 #navbar{
@@ -25,23 +25,23 @@ html {
   }
 
   main > .container-fluid {
-    padding: 60px 15px 0;
+    padding: 56px 0 0 0;
   }
 
   #search-container {
     background-image: url('https://cdn.phenompeople.com/CareerConnectResources/ACCOGLOBAL/pt_br/desktop/assets/images/events/v-1606629575511-events_default_banner.jpg');
     background-size: cover;
     background-position: center;
-    height: 400px;
-    padding: 100px;
+    height: 385px;
+    padding: 75px;
     text-align: center;
     border: none;
+    margin: 0;
   }
 
 #search-container h1 {
   color: #fff;
   margin-bottom: 30px;
-  font-weight: 900;
 }
 
 #events-container {
@@ -56,16 +56,51 @@ html {
   display: flex;
 }
 
-#card-container .card {
-  flex: 1 1 0;
+#events-container .card {
+  flex: 1 1 24%;
   max-width: 25%;
   border-radius: 8px;
   padding: 0;
-  margin: 5px;
+  margin: .5%;
+}
+
+#events-container .card:hover {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 #card-container img  {
-  max-height: 150px;
+  max-height: 120px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  image-rendering: optimizeSpeed;
+}
+
+#image-container,
+#info-container {
+  margin-top: 30px;  
+}
+
+#image-container img{
+border-radius: 8px;
+}
+
+#info-container h2{
+  font-size: 36px;
+  font-weight: 900;
+}
+#info-container p {
+  margin: 0;
+  font-size: 14px;
+  display: flex;
+}
+
+#info-container ion-icon {
+  font-size: 20px;
+  color:#f2a340;
+  margin-right: 5px;
+}
+
+#items-list li {
+  list-style-type:none;
+  padding-left: 0;
 }

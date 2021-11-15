@@ -45,6 +45,11 @@
     </nav>
     <main class="flex-shrink-0">
         <div class="container-fluid">
+            @if (session('msg'))
+                <div class="alert alert-primary" role="alert">
+                    {{ session('msg') }}
+                </div>
+            @endif
             @yield('content')
         </div>
     </main>
