@@ -18,6 +18,9 @@
                     <ion-icon name="time-outline"></ion-icon>
                     {{ date('d/m/Y', strtotime($event->date)) }}
                 </p>
+                <p class="card-owner">
+                    <ion-icon name="people-outline"></ion-icon> {{ $eventOwner['name'] }}
+                </p>
                 <p id="event-participants">
                     <ion-icon name="people-outline"></ion-icon> X partipantes
                 </p>

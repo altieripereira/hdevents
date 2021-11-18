@@ -15,7 +15,7 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">HD Events</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -23,13 +23,33 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Eventos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/events/create">Criar Eventos</a>
-                    </li>
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Registre-se</a>
+                        </li>
+                    @endguest
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Meus Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/events/create">Criar Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <a class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();"
+                                    href="/logout">Sair</a>
+                            </form>
+                        </li>
+                    @endauth
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="#">Entrar</a>
                     </li>
