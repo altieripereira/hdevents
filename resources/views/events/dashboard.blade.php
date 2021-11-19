@@ -7,6 +7,7 @@
     <div class="col-md-10 offset-md-1 dashboard-title-container">
         <h1>Dashboard</h1>
     </div>
+
     <div class="col-md-10 offset-md-1 dashboard-events-container">
         @if (count($events) > 0)
             <table class="table table-sm table-striped">
@@ -22,11 +23,19 @@
                     @foreach ($events as $event)
                         <tr>
                             <th scope="row">{{ $loop->index + 1 }}</th>
-                            <td>{{ $event->title }}</td>
-                            <td>0</td>
+                            <td><a href="/events/{{ $event->id }}">{{ $event->title }}</a></td>
+                            <td>{{ $event->users()->count() }}</td>
                             <td>
-                                <a href="#">[Editar]</a>
-                                <a href="#">[Excluir]</a>
+                                <a href="/events/edit/{{ $event->id }}" class="btn btn-info">
+                                    <ion-icon name="create-outline"></ion-icon>
+                                </a>
+                                <form action="/events/{{ $event->id }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">
+                                        <ion-icon name="trash-outline">Deletar</ion-icon>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

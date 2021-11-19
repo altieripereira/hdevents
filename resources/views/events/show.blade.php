@@ -22,9 +22,13 @@
                     <ion-icon name="people-outline"></ion-icon> {{ $eventOwner['name'] }}
                 </p>
                 <p id="event-participants">
-                    <ion-icon name="people-outline"></ion-icon> X partipantes
+                    <ion-icon name="people-outline"></ion-icon> {{ $event->users()->count() }} partipantes
                 </p>
-                <a href="#" class="btn btn-primary">Confirmar Presença</a>
+                <form action="/events/join/{{ $event->id }}" method="POST">
+                    @csrf
+                    <a href="/events/join/{{ $event->id }}" class="btn btn-primary"
+                        onclick="event.preventDefault(); this.closest('form').submit();">Confirmar Presença</a>
+                </form>
                 <h4>Evento conta com: </h4>
                 <ul id="items-list">
                     @foreach ($event->items as $item)
